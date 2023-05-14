@@ -26,7 +26,7 @@ export const LoginForm = () => {
           value={userDetails.username}
           onChange={(e) => setDetails("username", e.target.value)}
           id="username"
-          placeholder="username"
+          placeholder="singh"
         />
       </div>
       <div>
@@ -35,7 +35,7 @@ export const LoginForm = () => {
           value={userDetails.password}
           id="password"
           onChange={(e) => setDetails("password", e.target.value)}
-          placeholder="password"
+          placeholder="1999"
         />
       </div>
       <button
