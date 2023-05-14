@@ -1,4 +1,4 @@
-.App {
+.app {
   text-align: center;
 }
 
@@ -32,7 +32,109 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+.add-todo-box {
+  background: grey;
+  padding: 2% 6%;
+  border-radius: 6px;
+}
+
+input {
+  padding: 0.5% 2%;
+  font-size: 18px;
+  margin: 2% 0;
+}
+
+.add-todo-box label {
+  font-size: 22px;
+}
+
+.add-todo-box textarea {
+  font-size: 18px;
+  min-width: 20%;
+}
+
+button {
+  font-size: 20px;
+  margin-top: 2%;
+  padding: 0.5% 2%;
+}
+
+.toto-container .todo-item {
+  background-color: #c5e1e6;
+  margin: 2% auto;
+  padding: 5px 10px;
+  text-align: left;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #939697;
+  max-width: 80%;
+}
+
+.toto-container .todo-title {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.action-box {
+  display: flex;
+}
+
+.toto-container .head-line {
+  display: flex;
+  justify-content: space-between;
+}
+
+.title-box {
+  max-width: 80%;
+}
+
+.action-box img {
+  cursor: pointer;
+}
+
+.des-box {
+  display: flex;
+  align-items: baseline;
+}
+
+.login-form {
+  padding: 2%;
+}
+
+.login-form label {
+  font-size: 16px;
+}
+
+.sub-todo-btn {
+  display: flex;
+  column-gap: 1%;
+  margin-top: 1%;
+  cursor: pointer;
+}
+
+.sub-task-btn button {
+  margin: 0;
+}
+
+.single-subTodo {
+  padding: 0 2%;
+}
+
+.sub-title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.single-subTodo {
+  display: flex;
+  max-width: 40%;
+  align-items: center;
+  justify-content: space-between;
 }
