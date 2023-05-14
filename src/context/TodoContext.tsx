@@ -1,5 +1,5 @@
 import { ReactNode, createContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 export type ContextTodos = {
   todoList: todoItem[];
   addTodoItem: (item: AddTodoItem) => void;
@@ -109,7 +109,7 @@ export const TodoContextProvider = ({ children }: todoContextProps) => {
   console.log("loggedUser", loggedInUser);
   if (loggedInUser !== "true") {
     console.log("entered");
-    navigate("/login");
+    return <Navigate to="/login" />;
   }
 
   return (
