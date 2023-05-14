@@ -50,8 +50,7 @@ export const SingleTodo = ({ todo }: SingleTodoProps) => {
         )}
         {!!showAdd && (
           <div className="add-new-subtask">
-            <label> Title </label>
-            <input ref={inputRef} placeholder="Title" />
+            <input ref={inputRef} placeholder="Title" maxLength={12} />
             <div className="sub-task-btn">
               <button className="button addtodobtn" onClick={addnewSubTask}>
                 Add Subtask
