@@ -1,5 +1,5 @@
 import { ReactNode, createContext, useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 export type ContextTodos = {
   todoList: todoItem[];
   addTodoItem: (item: AddTodoItem) => void;
@@ -34,8 +34,6 @@ export type AddTodoItem = {
 let TodoListings: todoItem[] = [];
 
 export const TodoContextProvider = ({ children }: todoContextProps) => {
-  const navigate = useNavigate();
-
   const [todoList, setTodoList] = useState<todoItem[]>(TodoListings);
 
   const addTodoItem = (item: AddTodoItem) => {
