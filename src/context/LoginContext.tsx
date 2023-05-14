@@ -25,7 +25,7 @@ export const LoginProviderContext = ({ children }: LoginContextProps) => {
   const navigate = useNavigate();
   const checkLogin = ({ username = "", password = "" }: IUserLogin) => {
     const user = LoginCreds.find((cred) => {
-      return cred.password == password && cred.username == username;
+      return cred.password === password && cred.username === username;
     });
 
     if (user) {
