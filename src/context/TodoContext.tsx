@@ -106,9 +106,7 @@ export const TodoContextProvider = ({ children }: todoContextProps) => {
   };
 
   const loggedInUser = sessionStorage.getItem("authenticated");
-  console.log("loggedUser", loggedInUser);
   if (loggedInUser !== "true") {
-    console.log("entered");
     return <Navigate to="/login" />;
   }
 

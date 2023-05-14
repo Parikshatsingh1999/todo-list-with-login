@@ -1,5 +1,5 @@
 import { ReactNode, createContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 export type ContextLogin = {
   checkLogin: (details: IUserLogin) => void;
@@ -22,7 +22,6 @@ const LoginCreds: IUserLogin[] = [
 export const LoginContext = createContext<ContextLogin | null>(null);
 
 export const LoginProviderContext = ({ children }: LoginContextProps) => {
-  const navigate = useNavigate();
   const checkLogin = ({ username = "", password = "" }: IUserLogin) => {
     const user = LoginCreds.find((cred) => {
       return cred.password === password && cred.username === username;
@@ -31,7 +30,7 @@ export const LoginProviderContext = ({ children }: LoginContextProps) => {
     if (user) {
       alert("Congratulations You Logged In");
       sessionStorage.setItem("authenticated", "true");
-      navigate("/");
+      return <Navigate to="/" />;
     } else {
       alert("Wrong creds");
       sessionStorage.setItem("authenticated", "false");
