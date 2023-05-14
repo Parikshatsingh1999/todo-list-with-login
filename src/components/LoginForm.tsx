@@ -19,26 +19,33 @@ export const LoginForm = () => {
 
   return (
     <div className="login-form">
-      <label> Fill username and password</label>
-      <div>
-        <label htmlFor="username"> Username </label>
-        <input
-          value={userDetails.username}
-          onChange={(e) => setDetails("username", e.target.value)}
-          id="username"
-          placeholder="singh"
-        />
+      <label className="info-label"> Fill username and password</label>
+      <div className="form-wrapper">
+        <div className="form-line">
+          <label htmlFor="username"> Username </label>
+          <input
+            value={userDetails.username}
+            onChange={(e) => setDetails("username", e.target.value)}
+            id="username"
+            placeholder="singh"
+          />
+        </div>
+        <div className="form-line">
+          <label htmlFor="password"> Password </label>
+          <input
+            value={userDetails.password}
+            id="password"
+            onChange={(e) => setDetails("password", e.target.value)}
+            placeholder="1999"
+          />
+        </div>
       </div>
-      <div>
-        <label htmlFor="password"> Password </label>
-        <input
-          value={userDetails.password}
-          id="password"
-          onChange={(e) => setDetails("password", e.target.value)}
-          placeholder="1999"
-        />
-      </div>
+
       <button
+        data-active={
+          !!userDetails.password.length && !!userDetails.username.length
+        }
+        className="login-btn"
         disabled={!userDetails.password.length || !userDetails.username.length}
         onClick={(e) => checkLogin(userDetails)}
       >

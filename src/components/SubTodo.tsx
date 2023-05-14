@@ -13,21 +13,28 @@ export const SubTodos = ({ subTasks, todoId }: AddSubTodoProps) => {
 
   return (
     <>
-      {!!subTasks.length &&
-        subTasks.map((sub) => (
-          <div className="single-subTodo" key={sub.id}>
-            <div>
-              <p className="sub-title">{sub.title}</p>
-            </div>
-            <div className="delete-sub">
-              <img
-                src={deleteIcon}
-                onClick={() => deleteSubTodo(todoId, sub.id)}
-                alt="Delete Sub Todo"
-              />
-            </div>
-          </div>
-        ))}
+      <div className="subtask-wrapper">
+        <ul>
+          {!!subTasks.length &&
+            subTasks.map((sub) => (
+              <li key={sub.id}>
+                <div className="single-subTodo">
+                  <div className="sub-title-box">
+                    <span className="label-span"> SubTask Title :</span>
+                    <span className="sub-title">{sub.title}</span>
+                  </div>
+                  <div className="delete-sub">
+                    <img
+                      src={deleteIcon}
+                      onClick={() => deleteSubTodo(todoId, sub.id)}
+                      alt="Delete Sub Todo"
+                    />
+                  </div>
+                </div>
+              </li>
+            ))}
+        </ul>
+      </div>
     </>
   );
 };

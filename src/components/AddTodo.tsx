@@ -25,7 +25,7 @@ export const AddTodo = () => {
 
   return (
     <div className="add-todo-box">
-      <div>
+      <div className="title-label">
         <label htmlFor="todo-title"> Add Todo Item </label>
       </div>
       <div>
@@ -41,7 +41,11 @@ export const AddTodo = () => {
         <textarea ref={descriptionRef} placeholder="description" />
       </div>
       <div>
-        <button disabled={!details.title.length} onClick={() => createTodo()}>
+        <button
+          className="addtodobtn"
+          disabled={!details.title.length}
+          onClick={() => createTodo()}
+        >
           Add to do
         </button>
       </div>

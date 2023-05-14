@@ -1,5 +1,10 @@
 .app {
   text-align: center;
+  background-color: floralwhite;
+  padding: 2em;
+  min-height: 100vh;
+  position: relative;
+
 }
 
 .App-logo {
@@ -39,36 +44,93 @@
 }
 
 .add-todo-box {
-  background: grey;
-  padding: 2% 6%;
-  border-radius: 6px;
+  margin: auto;
+  max-width: 50%;
+  padding: 15px;
+  margin-top: 1.5em;
+  text-align: center;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 input {
-  padding: 0.5% 2%;
   font-size: 18px;
-  margin: 2% 0;
+  border: 2px solid #2faba4;
+  padding: 10px 20px;
+  border: none;
+  border-bottom: 2px solid lightgray !important;
+  width: 40%;
+}
+
+input:focus {
+  border: none;
+  outline: none;
 }
 
 .add-todo-box label {
-  font-size: 22px;
+  font-size: 20px;
+  font-style: italic;
+}
+
+.todo-des {
+  font-size: 18px;
+}
+
+.title-label {
+  margin-bottom: 4%;
 }
 
 .add-todo-box textarea {
   font-size: 18px;
-  min-width: 20%;
+  min-width: 40%;
+  border: 2px solid lightgrey;
+  margin: 1em 0em;
+  border-radius: 8px;
+  padding: 10px;
+  min-height: 100px;
 }
 
 button {
-  font-size: 20px;
   margin-top: 2%;
-  padding: 0.5% 2%;
+  border: none;
+  font-size: 20px;
+  background: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+}
+
+button.addtodobtn {
+  background-color: #0074d9;
+  color: white;
+
+}
+
+.logoutBtn {
+  background-color: red;
+  padding: 0.5% 1%;
+  color: white;
+  position: absolute;
+  right: 4%;
+  top: 8%;
+}
+
+button.addtodobtn:disabled {
+  background-color: grey;
+  color: white;
+  cursor: not-allowed;
+}
+
+
+button:hover {
+  background: #7adbd2;
+  color: white;
 }
 
 .toto-container .todo-item {
-  background-color: #c5e1e6;
+  background-color: #fff;
   margin: 2% auto;
-  padding: 5px 10px;
+  padding: 1% 2%;
   text-align: left;
   border-radius: 5px;
   align-items: center;
@@ -77,13 +139,19 @@ button {
   max-width: 80%;
 }
 
-.toto-container .todo-title {
-  font-size: 26px;
-  font-weight: bold;
+.toto-container .todo-title,
+.add-new-subtask label {
+  font-size: 16px;
+  font-weight: 500;
 }
 
 .action-box {
   display: flex;
+}
+
+.title-box .label-span,
+.des-box .label-span {
+  margin-right: 4%;
 }
 
 .toto-container .head-line {
@@ -91,8 +159,17 @@ button {
   justify-content: space-between;
 }
 
+.subtask-wrapper {
+  margin-top: 2%;
+}
+
+.subTask-box {
+  margin: 2% 0% 0 2%;
+}
+
 .title-box {
-  max-width: 80%;
+  width: 60%;
+  font-weight: bold;
 }
 
 .action-box img {
@@ -100,8 +177,14 @@ button {
 }
 
 .des-box {
-  display: flex;
   align-items: baseline;
+  font-weight: bold;
+  max-width: 90%;
+}
+
+.todo-des {
+  word-break: break-all;
+  font-weight: 500;
 }
 
 .login-form {
@@ -117,24 +200,54 @@ button {
   column-gap: 1%;
   margin-top: 1%;
   cursor: pointer;
+  color: #3b7673;
+  font-weight: 600;
 }
 
-.sub-task-btn button {
-  margin: 0;
+.sub-todo-btn img,
+.action-box img,
+.delete-sub img {
+  filter: invert(20%) sepia(96%) saturate(5814%) hue-rotate(200deg) brightness(70%) contrast(102%);
+  max-width: 75%;
 }
 
-.single-subTodo {
-  padding: 0 2%;
+.sub-task-btn {
+  display: flex;
+  gap: 20px !important;
 }
+
 
 .sub-title {
   font-size: 16px;
-  font-weight: bold;
+  font-weight: 500;
+}
+
+.single-subTodo .label-span {
+  margin-right: 4%;
+  font-weight: 700;
+}
+
+.sub-title-box {
+  width: 60%;
 }
 
 .single-subTodo {
   display: flex;
   max-width: 40%;
+  margin-bottom: 1%;
   align-items: center;
   justify-content: space-between;
+}
+
+.form-wrapper {
+  margin-top: 4%;
+}
+
+.form-line {
+  margin-bottom: 1%;
+}
+
+.login-btn[data-active="true"] {
+  background: #7adbd2;
+  color: white;
 }
