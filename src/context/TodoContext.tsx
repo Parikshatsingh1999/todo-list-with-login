@@ -34,6 +34,8 @@ export type AddTodoItem = {
 let TodoListings: todoItem[] = [];
 
 export const TodoContextProvider = ({ children }: todoContextProps) => {
+  const navigate = useNavigate();
+
   const [todoList, setTodoList] = useState<todoItem[]>(TodoListings);
 
   const addTodoItem = (item: AddTodoItem) => {
@@ -102,6 +104,13 @@ export const TodoContextProvider = ({ children }: todoContextProps) => {
       return newList;
     });
   };
+
+  const loggedInUser = sessionStorage.getItem("authenticated");
+  console.log("loggedUser", loggedInUser);
+  if (loggedInUser !== "true") {
+    console.log("entered");
+    navigate("/login");
+  }
 
   return (
     <TodoContext.Provider
