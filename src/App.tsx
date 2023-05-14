@@ -6,9 +6,17 @@ import {
   Route,
   Routes,
   Navigate,
+  useNavigate,
 } from "react-router-dom";
 
 function App() {
+  const navigate = useNavigate();
+  const loggedInUser = sessionStorage.getItem("authenticated");
+  console.log("loggedUser", loggedInUser);
+  if (loggedInUser !== "true") {
+    console.log("entered");
+    navigate("/login");
+  }
   return (
     <>
       <Router>
